@@ -6,6 +6,11 @@
   <title>Document</title>
 </head>
 <body>
+  <form method="post">
+    <input type="text" name="meno" placeholder="meno">
+    <input type="password" name="heslo" placeholder="heslo">
+    <input type="submit" name="submit" value="Pošli ma!">
+  </form>
 
 
   <?php 
@@ -175,6 +180,14 @@
         return false;
       }
     }
+
+    if(isset($_POST['submit'])){
+      $meno = $_POST['meno'];
+      $heslo = $_POST['heslo'];
+    }
+
+    kontrolaMena($meno);
+    kontrolaHesla($heslo);
 
     //Domáca úloha
     /*
