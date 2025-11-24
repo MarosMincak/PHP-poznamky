@@ -198,6 +198,10 @@
     Výstup: Zoznam čísel a súčet.
     */
 
+    // Zadanie 7.
+
+
+
 
   ?>
 </body>
