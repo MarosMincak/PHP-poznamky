@@ -28,8 +28,6 @@ function generateCards(){
   $karta = $randomKarta . $randomZnak;
   return $karta;
 }
- 
 
-
-
+echo generateCards();
 
