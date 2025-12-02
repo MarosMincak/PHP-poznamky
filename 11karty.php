@@ -67,4 +67,3 @@ function rozdajKarty($karty){
     }
   }
 }
-
