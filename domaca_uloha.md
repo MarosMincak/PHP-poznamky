@@ -6,7 +6,6 @@ Vytvorte jednoduchú kalkulačku, ktorá pomocou HTML formulára prijme dve čí
 **Potrebné funkcie:**
 - `calculate($a, $b, $operation)` - vráti výsledok operácie
 
-
 ---
 
 ## Zadanie 2: Analýza textu
