@@ -114,6 +114,4 @@ function odcitaniePola($pole){
 
 // 2 - 10 - 6 - 2 - 3 - 84 - 5 = -108 = +112
 odcitaniePola([2, 10, 6, 2, 3, 84, 5]); 
-
-// Jurčíková, Majerská, Paulo, Kubala
 ?>

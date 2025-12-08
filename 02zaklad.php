@@ -23,7 +23,7 @@
   $cislo = 10;          // integer
   $desatinne = 3.14;    // float
   $meno = "Jana";       // string
-  $aktivny = true;      // boolean
+  $aktivny = false;      // boolean
   $pole = [1, 2, 3];    // array
   $nic = null;          // null
 

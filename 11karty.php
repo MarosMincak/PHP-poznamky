@@ -28,7 +28,7 @@ $karty = [
   "A"  => 11,
 ];
 
-$znaky = ["♦", "♥", "♠", "♣"];
+$znaky = ["♦", "♥", "♠", "♣"]; 
 
 $mojeKarty = [];
 $dealeroveKarty = [];
@@ -65,5 +65,7 @@ function rozdajKarty($karty){
     foreach($karty as $karta){
       echo "<h2>" . $karta . " " . "</h2>";
     }
+  }else{
+    return;
   }
 }
