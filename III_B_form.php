@@ -41,6 +41,7 @@
 </html>
 
 <?php
+session_start();
 
 // ÚLOHA 1
 if (isset($_POST["meno"])) {
@@ -91,17 +92,30 @@ if(isset($_POST["c1"]) && isset($_POST["c2"]) && isset($_POST["c3"])){
 }
 
 function mojMax($a, $b, $c){
+  $_SESSION["maxHodnota"] = [];
+  $_SESSION["maxHodnota"] = null;
   if($a > $b && $a > $c){
-    echo $a;
+    $_SESSION["maxHodnota"] = $a;
   }else if($b > $a && $b > $c){
-    echo $b;
+    $_SESSION["maxHodnota"] = $b;
   }else if($c > $a && $c > $b){
-    echo $c;
+    $_SESSION["maxHodnota"] = $c;
   }else{
-    echo "rovnaké čísla";
+    $_SESSION["maxHodnota"] = 0;
+  }
+
+  for($i = 0; $i < count($_SESSION["maxHodnota"]); $i++){
+    echo $_SESSION["maxHodnota"][$i];
   }
 }
 
+//Pro Verzia
+/*
+Každým stlačením tlačidla sa pridá hodnota 
+do poľa hodnôt a toto pole sa následne vypíše
+
+
+*/
 
 
 
