@@ -36,6 +36,15 @@
     <input type="number" value="<?php echo rand(0, 100); ?>" name="c3">
     <input type="submit" value="Vyrátaj maximálnu hodnotu">
   </form>
+
+  <hr>
+
+  <form method="post">
+    <input type="number" name="number1">
+    <input type="number" name="number2">
+    <input type="number" name="number3">
+    <input type="submit" value="Vypíš všetky čísla">
+  </form>
 </body>
 
 </html>
@@ -102,6 +111,19 @@ function mojMax($a, $b, $c){
   }
 }
 
+// Úloha 5
+// 2 10 3  -> 2, 5, 8
+function vypisCisla($prveCislo, $druheCislo, $krok){
+  for($i = $prveCislo; $i <= $druheCislo; $i = $i + $krok){
+    echo $i . " ";
+  }
+}
+
+// vypisCisla(5,10,2);
+if(isset($_POST["number1"]) && isset($_POST["number2"]) && isset($_POST["number3"])){
+  vypisCisla($_POST["number1"], $_POST["number2"], $_POST["number3"]);
+}
+
 //Pro Verzia
 /*
 Každým stlačením tlačidla sa pridá hodnota 
@@ -140,7 +162,11 @@ PRO verzia: vytvorte funkciu mojMax(arg, arg, arg)
 
 // ÚLOHA 5
 /*
+Vytvorte funkciu, ktorá vypíše všetky čísla z
+inputu 1 po input 2 s krokom input 3.
 
+5, 15, 3 -> 5, 8, 11, 14
+5, 15, 1 -> 5, 6, 7, 8 ... 
 */
 
 ?>
