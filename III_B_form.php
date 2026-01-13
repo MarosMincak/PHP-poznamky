@@ -59,13 +59,12 @@ if (isset($_POST["cislo1"]) && isset($_POST["cislo2"])) {
 }
 
 // ÚLOHA 3
-// 7 -> 7 * 6 * 5 * 4 * 3 * 2 * 1
+// 7 -> 7 * 6 * 5 * 4 * 3 * 2 * 1 = x
 function faktorial($cisloUzivatela)
 {
   $vysledokFaktorialu = 1;
 
-  if (isset($cisloUzivatela)) {
-    $faktorial = $cisloUzivatela;
+  $faktorial = $cisloUzivatela;
 
     for ($i = $faktorial; $i >= 1; $i--) {
       $vysledokFaktorialu = $vysledokFaktorialu * $i;
@@ -75,7 +74,7 @@ function faktorial($cisloUzivatela)
     }
     echo $vysledokFaktorialu;
   }
-}
+
 
 if(isset($_POST["faktorial"])){
   faktorial($_POST["faktorial"]);
@@ -92,20 +91,14 @@ if(isset($_POST["c1"]) && isset($_POST["c2"]) && isset($_POST["c3"])){
 }
 
 function mojMax($a, $b, $c){
-  $_SESSION["maxHodnota"] = [];
-  $_SESSION["maxHodnota"] = null;
   if($a > $b && $a > $c){
-    $_SESSION["maxHodnota"] = $a;
+    echo $a;
   }else if($b > $a && $b > $c){
-    $_SESSION["maxHodnota"] = $b;
+    echo $b;
   }else if($c > $a && $c > $b){
-    $_SESSION["maxHodnota"] = $c;
+    echo $c;
   }else{
-    $_SESSION["maxHodnota"] = 0;
-  }
-
-  for($i = 0; $i < count($_SESSION["maxHodnota"]); $i++){
-    echo $_SESSION["maxHodnota"][$i];
+    echo "rovnaké";
   }
 }
 
