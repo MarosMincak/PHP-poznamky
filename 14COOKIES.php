@@ -9,6 +9,25 @@
 <body class="bg-light">
 
 <?php 
+
+$username = "admin";
+$password = "1234";
+$message = "";
+
+if(isset($_POST["login"])){
+  if(isset($_POST["username"]) && isset($_POST["password"])){
+    if($username == $_POST["username"] && $password == $_POST["password"]){
+      setcookie("logged", "1", time() + 3600);
+      $_COOKIE["logged"] = "1";
+    }
+  }
+}
+
+if(isset($_POST["logout"])){
+  setcookie("logged", "0", time() - 3600);
+  unset($_COOKIE["logged"]);
+}
+
 /*
 Požiadavky na riešenie:
 Vytvorte HTML formulár s poľami: username, password
@@ -43,7 +62,12 @@ alebo zobrazte rovno prihlasovací formulár.
                 <input type="password" class="form-control" id="password" name="password" placeholder="Zadaj heslo">
             </div>
 
-            <button type="submit" name="login" class="btn btn-primary w-100">Prihlásiť sa</button>
+            <?php
+            if(!isset($_COOKIE["logged"])){
+              echo "<button type='submit' name='login' 
+              class='btn btn-primary w-100'>Prihlásiť sa</button>";
+            }
+            ?>
         </form>
 
         <hr class="my-3">
@@ -56,6 +80,17 @@ alebo zobrazte rovno prihlasovací formulár.
         <!-- MIESTO NA VÝPIS SPRÁVY (PHP echo) -->
         <div class="mt-3 text-center">
             <!-- Tu vypíš: Používateľ je prihlásený / neprihlásený -->
+
+            <?php
+            if(isset($_COOKIE["logged"])){
+              $message = "Používateľ je prihlásený";
+
+            }else{
+              $message = "Používateľ nie je prihlásený";
+            }
+            ?>
+
+            <p><?php echo $message ?></p>
         </div>
     </div>
 </div>
