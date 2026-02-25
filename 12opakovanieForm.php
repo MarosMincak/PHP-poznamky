@@ -38,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["getMax"])){
   $cislo3 = $_POST["cislo3"];
   
   $maxValue = max($cislo1, $cislo2, $cislo3);
-  $_SESSION["poleMax"][] = $maxValue;
+  $_SESSION["poleMax"][] = "Slovo";
   $lastValue = end($_SESSION["poleMax"]);
 
   // Výpis zoznamu všetkých nájdených maxím vo formáte [a, b, c]

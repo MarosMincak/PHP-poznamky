@@ -90,13 +90,26 @@ if(isset($_POST["faktorial"])){
 }
 
 // ÚLOHA 4
+
+//[10,30,20,43,12,54]
 if(isset($_POST["c1"]) && isset($_POST["c2"]) && isset($_POST["c3"])){
   $c1 = $_POST["c1"];
   $c2 = $_POST["c2"];
   $c3 = $_POST["c3"];
 
-  mojMax($c1, $c2, $c3);
-  //echo max($c1, $c2, $c3);
+  $maximalnaHodnota = mojMax($c1, $c2, $c3);
+  echo $maximalnaHodnota;
+
+  if(!$_SESSION["poleMax"]){
+    $_SESSION["poleMax"] = [];
+  }
+
+  $_SESSION["poleMax"] = $maximalnaHodnota;
+
+  for($i = 0; $i < count($_SESSION["poleMax"]); $i++){
+    echo $_SESSION["poleMax"][$i];
+  }
+
 }
 
 function mojMax($a, $b, $c){
