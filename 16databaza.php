@@ -26,10 +26,13 @@
   }
 
   //INSERT (Vloženie dát)
+  
   if(isset($_POST["meno"]) && isset($_POST["priezvisko"]) && isset($_POST["vek"])){
-    $meno = $_POST["meno"];
-    $priezvisko = $_POST["priezvisko"];
-    $vek = $_POST["vek"];
+    if($_POST["meno"] != "" && $_POST["priezvisko"] != "" && $_POST["vek"] != ""){
+      $meno = $_POST["meno"];
+      $priezvisko = $_POST["priezvisko"];
+      $vek = $_POST["vek"];
+    }
 
     $sqlInsert = "INSERT INTO student(ID, meno, priezvisko, vek) 
     VALUES(NULL, '$meno', '$priezvisko', '$vek')";
