@@ -23,13 +23,17 @@ if (isset($_POST["login"])) {
   $username = $_POST["username"];
   $password = $_POST["password"]; 
 
-  $sql = "SELECT * FROM user WHERE name = '$username' AND password = '$password'";
+  $sql = "SELECT * FROM user WHERE name = '$username'";
   $result = mysqli_query($conn, $sql);
 
+  $hash_password = mysqli_fetch_assoc($result);
+
   if(mysqli_num_rows($result) == 1){
-    setcookie("logged", "1", time() + 3600);
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
+    if(password_verify($password,  $hash_password['password'])){
+      setcookie("logged", "1", time() + 3600);
+      header("Location: " . $_SERVER['PHP_SELF']);
+      exit();
+    }
   }
 }
 
@@ -85,8 +89,8 @@ if (isset($_POST["logout"])) {
       if (isset($_COOKIE["logged"])) {
         echo "Používateľ je prihlásený";
       } else {
-        echo "Používateľ nie je prihlásený ";
-        echo "<a href='register.php'>Registrovať sa</a>";
+        echo "<a href='register.php'>Registrovať sa </a>";
+        echo "<a href='forgot_password.php'>Zabudnuté heslo</a>";
       }
       ?>
     </div>
