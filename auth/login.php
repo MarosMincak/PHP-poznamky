@@ -1,21 +1,10 @@
 <!DOCTYPE html>
 <html lang="sk">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Login stránka - Cookies úloha</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+<?php include "parts/header.php" ?>
 
 <body class="bg-light">
-  <?php
-  $conn = mysqli_connect("localhost", "root", "root", "auth");
-
-  if(!$conn){
-    echo "Chyba pripojenia" . mysqli_connect_error();
-  }
-  ?>
-
+  <?php include "parts/db_connect.php" ?>
 <?php
 
 // LOGIN
@@ -94,6 +83,8 @@ if (isset($_POST["logout"])) {
       }
       ?>
     </div>
+
+    <?php include "parts/footer.php"; ?>
 
   </div>
 </div>
