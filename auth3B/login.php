@@ -12,9 +12,10 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
+$dbname = "authDB";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
@@ -22,8 +23,8 @@ if (!$conn) {
 
 $sql = "SELECT * FROM user";
 $result = mysqli_query($conn, $sql);
-
 while($row = mysqli_fetch_assoc($result)){
+  // TODO: Dokončiť autorizáciu cez DB
   echo $row["username"];
 }
 
