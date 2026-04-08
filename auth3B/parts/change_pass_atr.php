@@ -11,15 +11,16 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-
-$sql = "INSERT INTO user (username, pass)
-VALUES ('root', 'admin1234')";
+$sql = "ALTER TABLE `user` CHANGE `pass` `pass` VARCHAR(101) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL;";
 
 if (mysqli_query($conn, $sql)) {
-  echo "New record created successfully";
+  echo "DB Opravená";
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 mysqli_close($conn);
 ?>
+
+
+
