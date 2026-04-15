@@ -76,7 +76,7 @@ if (isset($_POST["logout"])) {
     <div class="text-center">
       <?php
       if (isset($_COOKIE["logged"])) {
-        echo "Používateľ je prihlásený";
+        echo "Používateľ je prihlásený.";
       } else {
         echo "<a href='register.php'>Registrovať sa </a>";
         echo "<a href='forgot_password.php'>Zabudnuté heslo</a>";
@@ -90,5 +90,4 @@ if (isset($_POST["logout"])) {
 </div>
 
 </body>
-</html>eôlrfmewknmrfkd.anksfn
-n
+</html>
