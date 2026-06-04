@@ -56,7 +56,7 @@
     Ak hmotnosť alebo výška nie sú kladné čísla, vypíš chybu.
 
 11. Vytvor formulár s checkboxmi na výber programovacích jazykov.
-    Používateľ môže vybrať PHP, Python, JavaScript, Java, C#.
+    Používateľ môže vybrať PHP, Python, C#.
     Po odoslaní vypíš všetky vybrané jazyky.
     Ak nevyberie žiadny jazyk, vypíš upozornenie.
 
@@ -73,5 +73,6 @@
     Výber ulož do cookie.
     Pri ďalšej návšteve sa má automaticky použiť posledná zvolená téma.
     Podľa hodnoty cookie zmeň farbu pozadia a textu stránky.
+    
 */
 ?>
